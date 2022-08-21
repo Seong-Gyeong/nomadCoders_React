@@ -6,20 +6,42 @@
     </body>
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
         const root = document.getElementById("root");
-        const h3 = React.createElement(
+        //JSX
+        const Title = () => (
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                "Hello I'm a span"
+            </h3>
+        );
+        /*
+        const h3 = Reac t.createElement(
             "h3", 
             {
                 onMouseEnter: () => console.log("mouse enter"),
             }, 
             "Hello I'm a span");
+            */
+        const Btn = () => (
+            <button style ={{backgroundColor : "tomato"}} onClick = {() => console.log("I'm clicked")}>
+                Click me
+            </button>
+        );
+        /*
         const btn = React.createElement("button", {
             style : {backgroundColor : "tomato"},
             onClick: () => console.log("im clicked"),
         }, "Click me"); //생성, addEventListener, innerText를 한번에!
-        const container = React.createElement("div", null, [h3, btn]);
-        ReactDOM.render(container, root);
+        */
+        const Container = () => (
+        <div>
+            <Title /> 
+            <Btn />
+        </div>
+        //대문자로 적어주어야 한다 -> 소문자면 html 요소로 인식함 
+        );
+        ReactDOM.render(<Container/>, root);
         //React element를 가지고 HTML로 만들어 배치한다, 즉 시용자에게 보여준다
     </script>
 </html>

@@ -15,3 +15,6 @@ Vanilla JS : HTML을 먼저 만들고, JS에서 그걸 가져와서 HTML을 수�
 React JS에서는 반대! -> JS에서 HTML 요소를 만들고 업데이트한다. 
 
 addEventListener를 추가할 필요가 없이 onClick처럼 그냥 props 안에서 추가하면 됨.
+
+------------------
+
