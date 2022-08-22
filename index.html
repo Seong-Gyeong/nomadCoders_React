@@ -27,23 +27,32 @@
         }, "Click me"); //생성, addEventListener, innerText를 한번에!
         */
 
-    function countUp() {
-      counter++;
-      render();
+    // function countUp() {
+    //   counter++;
+    //   render();
+    // }
+
+    // function render() {
+    //   ReactDOM.render(<App />, root);
+    // }
+
+    function App() {
+      const [counter, setCounter] = React.useState(0);
+      //[undefined, f] => undefined: counter, f: countUp
+      const onClick = () => {
+        setCounter(counter + 1);
+      };
+      return (
+        <div>
+          <h3> Total clicks : {counter} </h3>
+          <button onClick={onClick}> Click me </button>
+        </div>
+      );
     }
 
-    function render() {
-      ReactDOM.render(<App />, root);
-    }
+    ReactDOM.render(<App />, root);
 
-    const App = () => (
-      <div>
-        <h3> Total clicks : {counter} </h3>
-        <button onClick={countUp}> Click me </button>
-      </div>
-    );
-
-    render();
+    //render();
     //React element를 가지고 HTML로 만들어 배치한다, 즉 시용자에게 보여준다
   </script>
 </html>
