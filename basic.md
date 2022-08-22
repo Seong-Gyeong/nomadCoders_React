@@ -17,4 +17,22 @@ React JS에서는 반대! -> JS에서 HTML 요소를 만들고 업데이트한�
 addEventListener를 추가할 필요가 없이 onClick처럼 그냥 props 안에서 추가하면 됨.
 
 ------------------
+JSX : createElement를 쓰지 않고 컴포넌트를 통해 조금 더 깔끔하게 HTML 요소를 만들 수 있는 문법 
+-> React Element를 반환하는 함수
+
+- 브라우저가 우리가 적은 JSX를 이해할 수 있게 바꿔주도록 Babel을 install 해주어야 한다. 
+```
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+```
+
+- 한 컴포넌트 안에 다른 컴포넌트를 넣을 수 있다 
+``` 
+const Container = () => (
+        <div>
+            <Title /> 
+            <Btn />
+        </div>
+```
+
 
