@@ -75,3 +75,53 @@ const onClick = () => {
 
 <br/>
 &#8594; 현재 값을 가지고 계산을 하는 것이 보장이 된다는 점에서 2번 방법이 더 바른 방법, 1번은 다른 어떤 부분에서 또 counter를 변경할 가능성이 있음
+
+#
+
+```
+<h1 className="hi"> Super Converter </h1>
+```
+
+```
+<label htmlFor="hours"> Hours </label>
+```
+
+JSX에서는 class(x) clasName(O) / for(x) htmlFor(O)
+
+#
+
+```
+<input
+    value={flipped ? amount * 60 : amount}
+    id="minutes"
+    placeholder="Minutes"
+    type="number"
+    onChange={onChange}
+    disabled={flipped}
+/>
+```
+
+- 삼항연산자 : flipped(default:false)가 true라면 flipped가 한 번 눌러졌다는 이야기, 즉 hours를 입력하고 그것을 분으로 바꿔야함
+- disabled : true이면 해당 input에는 입력할 수 없다
+- onChange : input에 변화가 생기면 onChange 함수를 실행한다
+
+#
+
+```
+function App() {
+      ...
+      return (
+        ...
+          <hr />
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        ...
+      );
+    }
+
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+```
+
+- 한 컴포넌트 안에서 다수의 컴포넌트를 렌더링할 수 있다
+- 컴포넌트는 무조건 대문자로 시작해야한다! 이것 때문에 렌더링 실패해서 시간을 많이 잡아먹었다
