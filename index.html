@@ -9,40 +9,16 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
-    let counter = 0;
-
-    /*
-        const h3 = Reac t.createElement(
-            "h3",
-            {
-                onMouseEnter: () => console.log("mouse enter"),
-            },
-            "Hello I'm a span");
-            */
-
-    /*
-        const btn = React.createElement("button", {
-            style : {backgroundColor : "tomato"},
-            onClick: () => console.log("im clicked"),
-        }, "Click me"); //생성, addEventListener, innerText를 한번에!
-        */
-
-    // function countUp() {
-    //   counter++;
-    //   render();
-    // }
-
-    // function render() {
-    //   ReactDOM.render(<App />, root);
-    // }
 
     function App() {
       const [counter, setCounter] = React.useState(0);
       //[undefined, f] => undefined: counter, f: countUp
       const onClick = () => {
-        setCounter(counter + 1);
+        //setCounter(counter + 1); //리렌더링의 역할(컴포넌트 업데이트)
+        setCounter((current) => current + 1);
       };
       return (
+        //컴포넌트
         <div>
           <h3> Total clicks : {counter} </h3>
           <button onClick={onClick}> Click me </button>
