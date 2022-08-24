@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function Btn({ text, fontSize = 16 }) {
+      //fontSize가 undefined면 16으로 지정
       console.log(text, "was rendered");
       //props는 오브젝트라서 중괄호 열고 받아올 수 있다
       return (
